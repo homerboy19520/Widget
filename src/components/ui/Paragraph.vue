@@ -1,0 +1,94 @@
+<template>
+  <p
+    class="paragraph"
+    :class="[`m-${this.size} m-${this.weight} m-${this.color}`]"
+  >
+    <slot></slot>
+  </p>
+</template>
+<script>
+export default {
+  name: "ParagraphApp",
+  props: {
+    size: {
+      type: String,
+      default: "14",
+    },
+    weight: {
+      type: String,
+      default: "regular",
+    },
+    color: {
+      type: String,
+      default: "black",
+    },
+  },
+  computed: {
+    classes() {
+      return [
+        "paragraph",
+        `m-${this.size}`,
+        `m-${this.weight}`,
+        `m-${this.color}`,
+      ];
+    },
+  },
+};
+</script>
+
+<style lang="scss">
+.paragraph {
+  font-family: var(--font-inter);
+
+  &.m-24 {
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  &.m-12 {
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  &.m-10 {
+    font-size: 10px;
+    line-height: 14px;
+  }
+
+  &.m-regular {
+    font-weight: 400;
+  }
+
+  &.m-medium {
+    font-weight: 500;
+  }
+
+  &.m-bold {
+    font-weight: 700;
+  }
+
+  &.m-grey {
+    color: var(--color-grey);
+  }
+
+  &.m-str-grey {
+    color: var(--color-strong-grey);
+  }
+
+  &.m-blue {
+    color: var(--color-blue);
+  }
+
+  &.m-brown {
+    color: var(--color-brown);
+  }
+
+  &.m-str-black {
+    color: #000000;
+  }
+
+  &.m-black {
+    color: var(--color-black);
+  }
+}
+</style>
