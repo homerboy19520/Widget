@@ -81,7 +81,7 @@ export default {
           Authorization: "Bearer BT3HK2NpCnyrKiDo",
           "content-type": "application/x-www-form-urlencoded",
         },
-        url: "https://lobster.tools/api/v1/projects",
+        url: "https://lobster.tools/api/v1/categories",
         data: `limit=${getters.limit}&offset=0&search=${getters.value}&total=20`,
       };
       axios(options)
