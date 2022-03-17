@@ -50,11 +50,6 @@ export default {
     line-height: 16px;
   }
 
-  &.m-10 {
-    font-size: 10px;
-    line-height: 14px;
-  }
-
   &.m-regular {
     font-weight: 400;
   }
@@ -62,29 +57,12 @@ export default {
   &.m-medium {
     font-weight: 500;
   }
-
-  &.m-bold {
-    font-weight: 700;
-  }
-
   &.m-grey {
     color: var(--color-grey);
   }
 
   &.m-str-grey {
     color: var(--color-strong-grey);
-  }
-
-  &.m-blue {
-    color: var(--color-blue);
-  }
-
-  &.m-brown {
-    color: var(--color-brown);
-  }
-
-  &.m-str-black {
-    color: #000000;
   }
 
   &.m-black {

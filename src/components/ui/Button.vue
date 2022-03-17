@@ -31,7 +31,7 @@ export default {
 
   methods: {
     onButton() {
-      this.$emit("unbutton");
+      this.$emit("onbutton");
     },
   },
 };
@@ -46,22 +46,6 @@ export default {
   outline: none;
   border: none;
 
-  &.m-search {
-    background-color: transparent;
-    border: none;
-    outline: none;
-    width: 24px;
-    height: 24px;
-    position: absolute;
-    left: 3px;
-    top: 50%;
-    transform: translate(0, -50%);
-    z-index: 1;
-    @media (max-width: 700px) {
-      left: 10px;
-    }
-  }
-
   &.m-text {
     font-family: var(--font-inter);
     font-weight: 500;
@@ -74,37 +58,11 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 10px 16px;
+    margin-top: 10px;
 
     &:hover {
       opacity: 0.6;
-    }
-
-    @media (max-width: 700px) {
-      padding: 10px;
-      font-size: 14px;
-      line-height: 19px;
-    }
-  }
-
-  &.m-switch {
-    background-color: transparent;
-    border: 1px solid transparent;
-    border-bottom: 1px dashed var(--color-strong-grey);
-    transition: color 0.2s ease-out, border-bottom-color 0.2s ease-out;
-
-    &.active {
-      border-bottom-color: var(--color-black);
-
-      & p {
-        transition: opacity 0.2s ease-out, color 0.2s ease-out;
-        color: var(--color-black);
-      }
-    }
-
-    &:hover {
-      p {
-        opacity: 0.8;
-      }
     }
   }
 
@@ -129,52 +87,21 @@ export default {
     }
   }
 
-  &.m-delete {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 17px;
+  &.m-search {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(0, -50%);
+    line-height: 0;
+    padding: 10px;
     transition: opacity 0.2s ease-out;
+    & svg {
+      width: 20px;
+      height: 20px;
+    }
 
     &:hover {
       opacity: 0.6;
-    }
-
-    @media (max-width: 700px) {
-      width: 100%;
-      border: 1px solid var(--color-black);
-      border-radius: 10px;
-    }
-  }
-
-  &.m-pagination {
-    border: none;
-    outline: none;
-    transition: opacity 0.2s ease-out;
-    padding: 16px;
-
-    & svg {
-      min-height: 25px;
-      min-width: 25px;
-      @media (max-width: 700px) {
-        min-height: 35px;
-        min-width: 35px;
-      }
-    }
-
-    &:hover {
-      svg path {
-        transition: fill 0.2s ease-out;
-        fill: var(--color-black);
-      }
-    }
-    &.disabled {
-      cursor: not-allowed;
-      &:hover {
-        svg path {
-          fill: var(--color-blue);
-        }
-      }
     }
   }
 }

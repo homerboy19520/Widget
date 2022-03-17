@@ -14,5 +14,10 @@ export default {
 
 <style lang="scss" scoped>
 .widget-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: #eceff0;
 }
 </style>
